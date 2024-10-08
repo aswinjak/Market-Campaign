@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #FFFFFF;
+    --secondary: #000000;
+    --third: #5938F7;
+    --texts-primary: #5C5389;
+    --texts-secondary: #716998;
+    --texts-third: rgb(43, 43, 43);
+    --background-light: #5838f712;
+}
+
+/* ================================================= Navigation container ================================================= */
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+}
+
+.header > .logo {
+    font-size: 32px;
+    font-weight: 700;
+    justify-self: flex-start;
+    color: var(--texts-primary);
+    margin-left: 2rem;
+}
+
+.header .heading-items {
+    list-style: none;
+    margin-right: 3rem;
+}
+
+.header .heading-items .items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6rem;
+}
+
+.header .heading-items .items .item {
+    font-size: 20px;
+    font-weight: 500;
+    position: relative; /* Keep this for the pseudo-element */
+}
+
+.header .heading-items .items .item a {
+    text-decoration: none;
+    color: var(--secondary);
+    padding: 0.5rem 0; /* Add some padding for the hover effect */
+    transition: color 0.1s ease;
+}
+
+
+.header .heading-items .items .item a.active {
+    font-weight: 650; /* Make it bold or use a different style */
+}
+
+.header .heading-items .items .item a:not(.active) {
+    color: rgba(0, 0, 0, 0.5); /* Grey out non-active links */
+}
+
+.header .heading-items .items .item a::after {
+    content: ''; /* Pseudo-element for the line */
+    display: block;
+    width: 100%;
+    height: 2px; /* Thicker height for the line */
+    background: var(--texts-primary); /* Color of the line */
+    position: absolute;
+    bottom: -5px; /* Position the line below the link */
+    left: 0; /* Align to the left */
+    border-radius: 2px; /* Add rounded corners */
+    transform: scaleX(0); /* Initially hide the line */
+    transition: transform 0.1s ease-out; /* Faster transition */
+}
+
+.header .heading-items .items .item a:hover::after,
+.header .heading-items .items .item a.active::after {
+    transform: scaleX(.3); /* Show the line on hover or if active */
+}
+
+.header .heading-items .items .item a:hover {
+    color: rgba(0, 0, 0, 0.8); /* Change color on hover for non-active links */
+}
+
+/* ================================================= Home container ================================================= */
+
+.container-primary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blob {
+    width: 440px; 
+    height: 440px; 
+    border-radius: 14rem; 
+    background: radial-gradient(73.4% 100.98% at 95.54% 95.05%, rgba(255, 156, 65, 0.78) 0%, rgba(255, 168, 88, 0) 100%), linear-gradient(197.37deg, #FFF0A4 -0.38%, rgba(255, 240, 164, 0) 101.89%), radial-gradient(58.85% 73.83% at 9.82% 3.13%, rgba(49, 132, 255, 0.8) 0%, rgba(56, 75, 247, 0.208) 52.16%, rgba(62, 246, 246, 0) 100%), linear-gradient(117.39deg, #3E9EF6 3.91%, rgba(238, 43, 183, 0.33) 37.48%, rgba(246, 62, 106, 0) 73.98%), linear-gradient(306.53deg, #FFAADD 19.83%, rgba(255, 170, 221, 0) 97.33%); background-blend-mode: normal,normal,normal,normal,normal,normal; filter: blur(97px);
+    position: absolute;
+    z-index: -1;
+}
+
+.impression-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    gap: 4rem;
+    height: 150dvh;
+}
+
+.impression-section .impression-heading {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.impression-section .impression-body {
+    font-size: 20px;
+    text-align: center;
+    margin: 0 4rem 0 4rem;
+    letter-spacing: .5px;
+    font-family: "Roboto", sans-serif;
+    color: var(--texts-third);
+}
+
+.impression-section .image {
+    background-image: url('../images/linkedin.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90dvw;
+    height: 70dvh;
+    background-size: cover; /* Optional: cover the div */
+    border-radius: 3rem;
+}
+
+.line {
+    width: 50%;
+    height: .05rem;
+    background-color: var(--secondary);
+}
+
+.container-secondary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.classification-route {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    gap: 4rem;
+}
+
+.classification-route .classification-heading {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.classification-route .classification-body {
+    font-size: 20px;
+    text-align: center;
+    margin: 0 4rem 0 4rem;
+    letter-spacing: .5px;
+    font-family: "Roboto", sans-serif;
+    color: var(--texts-third);
+}
+
+.classification-route .predict { 
+    text-decoration: none;
+    padding: .7rem 2rem;
+    background: var(--texts-primary);
+    color: var(--primary);
+    border-radius: .5rem;
+    font-size: 18px;
+    transition: .2s ease-in background;
+    font-weight: 600;
+}
+
+.classification-route .predict:hover {
+    background: #4e4674;
+}
+
+.classification-route .blob {
+    width: 200px; 
+    height: 200px; 
+    border-radius: 14rem; 
+    background: radial-gradient(77.73% 77.73% at 98.52% 96.25%, #F98BDA 0%, rgba(128, 76, 239, 0.29) 50.52%, rgba(91, 216, 216, 0) 100%), radial-gradient(141.73% 105.23% at 50% -7.16%, #E1F8FF 0%, rgba(160, 198, 255, 0) 50.73%, rgba(162, 147, 255, 0) 100%), radial-gradient(112.27% 48.54% at 1.59% 50%, rgba(255, 130, 227, 0.5) 0%, rgba(255, 123, 234, 0.095) 53.91%, rgba(254, 216, 255, 0) 100%), linear-gradient(153.07deg, #8177F3 6.37%, rgba(255, 230, 166, 0) 83.82%); background-blend-mode: normal,normal,normal,normal,normal,normal; filter: blur(97px);
+    position: absolute;
+    margin-bottom: -10rem;
+}
+
+/* ================================================= Footer container ================================================= */
+
+.footer {
+    text-align: center;
+    letter-spacing: 2px;
+    background-color: #000000;
+    font-size: 16px;
+    padding: .5rem;
+    bottom: 0;
+    color: var(--primary);
+}
+
+.footer code {
+    font-family: "Source Code Pro", monospace;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+/* ================================================= Analysis Page ================================================= */
+.content {
+    padding: 2rem 4rem;
+}
+.content h2 {
+    font-size: 36px;
+    color: #000;
+    margin-bottom: 2rem;
+    letter-spacing: .5px;
+}
+.content .graph-section {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    margin-bottom: 8rem;
+}
+.content .graph-section img {
+    border-radius: 8px;
+    margin-right: 20px;
+    border-radius: .5rem;
+}
+.content .graph-section p {
+    font-size: 20px;
+    color: var(--texts-third);
+    line-height: 1.5;
+    letter-spacing: .5px;
+    text-align: justify;
+}
+.content .graph-section h3 {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* ================================================= Predictions Page ================================================= */
+
+.container {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+ 
+.container > h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 40px 0;
+}
+
+.container > form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container > form .form-group {
+    width: 48%;
+    margin-bottom: 20px;
+    gap: 1rem;
+}
+
+.container > form .form-group.full-width {
+    width: 100%;
+}
+.container > form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-align: left;
+}
+.container > form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--third);
+    border-radius: 5px;
+    font-size: 14px;
+    background: var(--background-light);
+}
+.container > form .radio-group-column {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+}
+ 
+.container > form .radio-group-column label {
+    margin-bottom: 10px;
+}
+
+.submit-btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem; 
+}
+
+.submit-btn {
+    margin-top: 2rem;
+    background-color: var(--texts-primary);
+    color: #ffffff;
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: .5rem;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .2s ease-in background;
+}
+
+.submit-btn:hover {
+    background: #4e4674;
+}
+
+/* ================================================= Predictions Page ================================================= */
+
+.container-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 80dvh;
+}
+
+.container-result > h1 {
+    font-size: 36px;
+}
+
+.container-result > h2 {
+    font-size: 28px;
+}
+
+.container-result > p {
+    font-size: 20px;
+}
+
+.container-result .navigate-back {
+    text-decoration: none;
+    padding: .7rem 2rem;
+    background: var(--texts-primary);
+    color: var(--primary);
+    border-radius: .5rem;
+    font-size: 18px;
+    transition: .2s ease-in background;
+    font-weight: 600;
+}
+
+.container-result .navigate-back:hover {
+    background: #4e4674;
+}

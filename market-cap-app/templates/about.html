@@ -1,0 +1,77 @@
+{% extends 'index.html' %}
+
+{% block title %}
+Analysis
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <h2>Detailed Analysis</h2>
+    
+    <div class="graph-section">
+        <img
+            alt="Graph showing Job vs Age Analysis"
+            src="{{ url_for('static', filename='images/job_age.png') }}"
+        />
+        <div>
+            <h3>Job vs Age Analysis</h3>
+            <p>
+                The data indicates that individuals aged between 30 and 60, working in various professions such as administrative roles, blue-collar jobs, and entrepreneurship, are more likely to opt for the term deposit plan. This suggests a trend where middle-aged professionals from diverse job sectors show a preference for this financial product.
+            </p>
+        </div>
+    </div>
+
+    <div class="graph-section">
+        <div>
+            <h3>Previous Campaign Outcome</h3>
+            <p>
+                The dataset contains a significant number of records where customers have opted out of the campaign, resulting in incomplete or missing data. In a previous campaign, out of 1228 customers, 815 opted for the term deposit. However, this number of successful conversions is not substantial enough to significantly influence the classification model, likely due to issues such as data imbalance or the presence of non-existent records.
+            </p>
+        </div>
+        <img
+            alt="Graph showing Previous Campaign Outcome"
+            src="{{ url_for('static', filename='images/poutcome.png') }}"
+        />
+    </div>
+
+    <div class="graph-section">
+        <img
+            alt="Graph showing Housing Analysis"
+            src="{{ url_for('static', filename='images/housing.png') }}"
+        />
+        <div>
+            <h3>Housing Analysis</h3>
+            <p>
+                The data reveals that individuals with housing are more likely to opt for the term deposit plan. This trend could significantly enhance the model’s ability to predict which customers are likely to choose the term deposit, as housing status appears to be a strong indicator of this financial decision.
+            </p>
+        </div>
+    </div>
+
+    <div class="graph-section">
+        <div>
+            <h3>Final Accuracy Analysis</h3>
+            <p>
+                The ROC curve in the image demonstrates the classifier’s strong performance, with an AUC value of 0.9421. This high AUC indicates excellent predictive power, as the classifier maintains a high true positive rate while keeping the false positive rate low across various thresholds. This suggests the model is highly effective at distinguishing between positive and negative cases, making it reliable for applications requiring accurate predictions, such as medical diagnostics or spam detection.
+            </p>
+        </div>
+        <img
+            alt="Graph showing Accuracy Analysis"
+            src="{{ url_for('static', filename='images/accuracy.png') }}"
+        />
+    </div>
+
+    <div class="graph-section">
+        <img
+            alt="Graph showing Confusion Matrix Analysis"
+            src="{{ url_for('static', filename='images/confusion_matrix.png') }}"
+            height="380px"
+        />
+        <div>
+            <h3>Confusion Matrix Analysis</h3> <!-- Corrected the heading -->
+            <p>
+                The confusion matrix reveals that the classification model is highly accurate, with a significant number of correct predictions for both positive and negative cases. It has a low error rate, making few mistakes in its predictions. The model shows balanced performance, effectively identifying both positive and negative cases, which is essential for reliable predictions. However, there is still room for improvement, as some errors in the form of false positives and false negatives are present. Overall, the model exhibits strong predictive capabilities with a good balance between sensitivity and specificity.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

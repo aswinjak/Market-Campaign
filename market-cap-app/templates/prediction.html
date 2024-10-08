@@ -1,0 +1,89 @@
+{% extends 'index.html' %}
+
+{% block title %}
+Predictions
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Classify Customer Decision</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="state-code">State Code</label>
+            <input type="text" id="state-code" name="state-code" required>
+        </div>
+        <div class="form-group">
+            <label for="city-code">City Code</label>
+            <input type="text" id="city-code" name="city-code" required>
+        </div>
+        <div class="form-group">
+            <label for="duration">Duration</label>
+            <input type="text" id="duration" name="duration" required>
+        </div>
+        <div class="form-group">
+            <label for="pdays">Pdays</label>
+            <input type="text" id="pdays" name="pdays" required>
+        </div>
+        <div class="form-group">
+            <label for="employment-indicator">Employment Indicator</label>
+            <input type="text" id="employment-indicator" name="employment-indicator" required>
+        </div>
+        <div class="form-group">
+            <label for="consumer-index">Consumer Index</label>
+            <input type="text" id="consumer-index" name="consumer-index" required>
+        </div>
+        <div class="form-group">
+            <label for="economic-sentiment">Economic Sentiment</label>
+            <input type="text" id="economic-sentiment" name="economic-sentiment" required>
+        </div>
+        <div class="form-group">
+            <label for="interest-rate-impact">Interest Rate Impact</label>
+            <input type="text" id="interest-rate-impact" name="interest-rate-impact" required>
+        </div>
+        <div class="form-group">
+            <label for="job-blue-collar">Job Blue Collar</label>
+            <input type="text" id="job-blue-collar" name="job-blue-collar" required>
+        </div>
+        <div class="form-group">
+            <label>Marital Status</label>
+            <div class="radio-group-column">
+                <label><input type="radio" name="marital-status" value="married" required> Married</label>
+                <label><input type="radio" name="marital-status" value="single" required> Single</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Education</label>
+            <div class="radio-group-column">
+                <label><input type="radio" name="education" value="high-school" required> High School</label>
+                <label><input type="radio" name="education" value="university-degree" required> University Degree</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="housing-yes">Housing Yes</label>
+            <input type="text" id="housing-yes" name="housing-yes" required>
+        </div>
+        <div class="form-group">
+            <label for="contact-telephone">Contact Telephone</label>
+            <input type="text" id="contact-telephone" name="contact-telephone" required>
+        </div>
+        <div class="form-group">
+            <label for="month">Month</label>
+            <input type="text" id="month" name="month" required>
+        </div>
+        <div class="form-group">
+            <label>Poutcome</label>
+            <div class="radio-group-column">
+                <label><input type="radio" name="poutcome" value="nonexistent" required> Nonexistent</label>
+                <label><input type="radio" name="poutcome" value="success" required> Success</label>
+            </div>
+        </div>
+        <div class="form-group full-width submit-btn-wrapper">
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

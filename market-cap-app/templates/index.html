@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <!-- <script src="{{ url_for('static', filename='js/script.js') }}" type="text/javascript" defer></script> -->
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+<body>
+    <nav class="header">
+        <p class="logo">DB Bank</p>
+        <div class="heading-items">
+            <li class="items">
+                <ul class="item"><a href="{{ url_for('home') }}" class="{% if current_page == 'home' %}active{% endif %}">Home</a></ul>
+                <ul class="item"><a href="{{ url_for('analysis') }}" class="{% if current_page == 'analysis' %}active{% endif %}">Analysis</a></ul>
+                <ul class="item"><a href="{{ url_for('prediction') }}" class="{% if current_page == 'prediction' %}active{% endif %}">Prediction</a></ul>
+            </li>
+        </div>
+    </nav>
+{% block content %}
+    <div class="container-primary">
+        <div class="blob" style="left: 0;bottom: -10rem;"></div>
+        <div class="impression-section">
+            <p class="impression-heading">Your Trusted Financial Partner</p>
+            <p class="impression-body">At DB Bank, we provide tailored financial solutions to meet your unique needs. With a focus on customer service and security, we offer a range of products from savings to investments, ensuring your financial future is secure. Join us in making smart financial decisions with confidence.</p>
+            <div class="image"></div>
+            <div class="line"></div>
+        </div>
+        <div class="blob" style="right: 5rem; bottom: -20rem;"></div>
+    </div>
+
+    <div class="container-secondary">
+        <div class="classification-route">
+            <p class="classification-heading">Classify Your Customer for Term Deposit</p>
+            <p class="classification-body">Enter customer details to predict if they are likely to accept a term deposit. Fill in the following information or upload a file to analyze customers at once. The model will predict whether the customer will accept the term deposit based on the provided data</p>
+            <div class="blob 1"></div>
+            <a href="{{ url_for('prediction') }}" class="predict">Predict Now</a>
+        </div>
+    </div>  
+    {% endblock %}
+    <div class="footer"><code>&copy;copyrights (2024-7-10) </code>😍😃🤖🍉🔍❤️</div>
+</body>
+</html5
